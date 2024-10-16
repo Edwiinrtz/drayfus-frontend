@@ -1,0 +1,31 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: .2%;
+    width: 100%;
+}
+header img{
+    margin-right: 1%;
+    border-radius: 100%;
+    width: 64px;
+    height: 64px;
+}
+
+header img:hover{
+    cursor: pointer;
+}
+
+
+.cat-section{
+    margin: 5% 5%;
+}
+
+section.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+footer h4{
+    text-align: center;
+}

@@ -1,0 +1,19 @@
+<c-carousel>
+  <c-carousel-indicators></c-carousel-indicators>
+  <c-carousel-inner>
+    <c-carousel-item (click) ="showInfo()" *ngFor="let image of images">
+      <img [src]="image.url" alt="{{ image.id }}" class="d-block w-100" loading="lazy" />
+
+      <c-carousel-caption class="d-md-block">
+        <h3>{{image?.breeds?.[0]?.name ?? 'No name available'}}</h3>
+        <p>{{image?.breeds?.[0]?.breed ?? 'no breed available'}}</p>
+      </c-carousel-caption>
+
+    </c-carousel-item>
+
+  </c-carousel-inner>
+  <c-carousel-control caption="Previous" direction="prev"></c-carousel-control>
+  <c-carousel-control caption="Next" direction="next"></c-carousel-control>
+</c-carousel>
+
+<app-info-modal [visible]="visible" [images]="images"></app-info-modal>

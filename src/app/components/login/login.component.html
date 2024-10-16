@@ -1,0 +1,16 @@
+<section>
+    <form cForm [formGroup]="logForm" id="login">
+        <input id="username" cFormControl formControlName="username" placeholder="Username" type="text" required/>
+        <div class="validation" *ngIf="logForm.get('username')?.touched && logForm.get('username')?.invalid">
+            <small *ngIf="logForm.get('username')?.hasError('required')">Username is required</small>
+          </div>
+        <input id="password" cFormControl formControlName="password" placeholder="Password" type="password" required/>
+        <div class="validation" *ngIf="logForm.get('password')?.touched && logForm.get('password')?.invalid">
+            <small *ngIf="logForm.get('password')?.hasError('required')">Password is required</small>
+            <small *ngIf="logForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long</small>
+        </div>
+        <a href="signup">Sign up</a>
+        <input cButton class="btn" type="submit" value="login" (click)="login()" />
+        <c-alert style="display: none;" color="danger"></c-alert>
+    </form>
+</section>

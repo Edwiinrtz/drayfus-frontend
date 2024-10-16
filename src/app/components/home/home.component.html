@@ -1,0 +1,11 @@
+<header>
+    <img src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg" alt="profile" (click)="goToProfile()">
+</header>
+<main class="cat-section">
+    <select aria-label="Large select example" cSelect class="mb-3" sizing="lg" [(ngModel)]="selectedBreed" (ngModelChange)="getByBreed($event)">
+      <option disabled selected>Breed</option>
+      <option *ngFor="let breed of breeds" [value]="breed.breed">{{ breed.breed }}</option>
+    </select>
+    <p *ngIf="images.length === 0">No images available for the selected breed.</p>
+    <app-catimages *ngIf="images.length > 0 && showInfo" [images]="images"> </app-catimages>
+</main>

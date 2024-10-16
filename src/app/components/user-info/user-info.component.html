@@ -1,0 +1,17 @@
+<section>
+    <c-card class="mb-3">
+        <c-row class="g-0">
+            <c-col [md]="4">
+                <img [cCardImg] src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg">
+            </c-col>
+            <c-card-body class="col-md-8">
+                <h2 cCardTitle>{{user?.name}}</h2>
+                <h6 cCardSubtitle> {{'@'+user?.username}} - {{user?.email}}</h6>
+                <p cCardText> 
+                        Some user info not implemented yet
+                </p>
+            </c-card-body>          
+            <button class="logout btn btn-danger" (click)="logOut()">log out</button>
+        </c-row>
+    </c-card>
+</section>
